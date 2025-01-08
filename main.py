@@ -5,7 +5,6 @@ import time
 import os
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-from functools import partial
 
 class ArticleSimilarityFinder:
     def __init__(self, json_dir_path):
@@ -133,7 +132,7 @@ if __name__ == "__main__":
     try:
         start_time = time.time()
         finder = ArticleSimilarityFinder(json_directory)
-        target_article_id = '307840'
+        target_article_id = '1157397'
         next_article_id = ""
         matched_articles = finder.find_matches(target_article_id, 0.1, 0.9, max_matches=10)
         next_article_id = finder.choose_article_from_array(matched_articles)
