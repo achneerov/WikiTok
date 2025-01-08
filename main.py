@@ -105,11 +105,9 @@ if __name__ == "__main__":
     json_directory = "/Users/alexanderchneerov/d/WikiTok/json"
     
     try:
-        finder = ArticleSimilarityFinder(json_directory)
-        
-        target_article_id = '307840'
         start_time = time.time()
-        
+        finder = ArticleSimilarityFinder(json_directory)
+        target_article_id = '307840'
         matched_articles = finder.find_matches(target_article_id, 0.1, 0.9, max_matches=10)
         next_article_id = finder.choose_article_from_array(matched_articles)
         
